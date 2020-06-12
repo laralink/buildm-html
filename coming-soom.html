@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Pressionate">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Page Title -->
+    <title>Buildm - Construction HTML Template</title>
+    <!-- Favicon Icon -->
+  	<link rel="icon" href="img/favicon.png">
+  	<!-- Google fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600|Work+Sans:300,400,500,600,700,900" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Modernizr -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Start Preloader -->
+    <div id="preloader">
+        <div class="t-circle">
+          <div class="t-circle1 t-child"></div>
+          <div class="t-circle2 t-child"></div>
+          <div class="t-circle3 t-child"></div>
+          <div class="t-circle4 t-child"></div>
+          <div class="t-circle5 t-child"></div>
+          <div class="t-circle6 t-child"></div>
+          <div class="t-circle7 t-child"></div>
+          <div class="t-circle8 t-child"></div>
+          <div class="t-circle9 t-child"></div>
+          <div class="t-circle10 t-child"></div>
+          <div class="t-circle11 t-child"></div>
+          <div class="t-circle12 t-child"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- Start Coming Soon Wrapper -->
+    <div class="coming-soon-wrapper text-center">
+        <h1>UNDER CONSTRUCTION</h1>
+        <h4>Stay tuned, we are launching very soon...</h4>
+        <!-- Counting down -->
+        <h2 id="time-line"></h2>
+    </div>
+    <!-- End Coming Soon Wrapper -->
+
+    <!-- Scripts -->
+    <script src="js/vendor/jquery-3.2.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        /* Set the date we're counting down to */
+        var countDownDate = new Date("November 5, 2017 15:37:25").getTime();
+
+        /* Update the count down every 1 second */
+        var x = setInterval(function() {
+
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            /* Time calculations for days, hours, minutes and seconds */
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            /* Output the result in an element with id="time-line" */
+            document.getElementById("time-line").innerHTML = 
+            "<div class='outer-clock'>" + days + "<span> DAYS </span>" + "</div>" + 
+            "<div class='outer-clock'>" + hours + "<span> HOURS </span>" + "</div>" + 
+            "<div class='outer-clock'>" + minutes + "<span> MINUTES </span>" + "</div>" +
+            "<div class='outer-clock'>" + seconds + "<span> SECONDS </span>" + "</div>";
+            
+            /* If the count down is over, write some text */
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("time-line").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+  </body>
+</html>
